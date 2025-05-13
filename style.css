@@ -115,10 +115,11 @@
     }
 
 .circle-photo {
-  width: 80px; 
+  width: 80px;
   height: 80px; 
   border-radius: 50%; 
   object-fit: cover; 
+  overflow: hidden; 
   display: block;
   margin: 0 auto 20px;
 }
