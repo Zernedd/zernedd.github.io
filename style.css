@@ -64,7 +64,7 @@
     display: inline-block;
     padding: 12px 24px;
     margin: 8px;
-    color: #fff;
+    color: #e100ff;
     background: transparent;
     border: 2px solid #15ff00;
     border-radius: 30px;
@@ -82,7 +82,7 @@
     top: 50%;
     width: 0;
     height: 0;
-    background: #15ff00;
+    background: #ae00ff;
     border-radius: 100%;
     z-index: -1;
     transform: translate(-50%, -50%);
