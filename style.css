@@ -20,7 +20,7 @@ body {
 
 /* Background GIF */
 .background {
-  background: url('assets/background.gif') no-repeat center center fixed;
+  background: url('https://i.imgur.com/BaE1Jq3.gif') no-repeat center center fixed;
   background-size: cover;
   position: fixed;
   top: 0;
