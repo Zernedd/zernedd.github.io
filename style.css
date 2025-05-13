@@ -1,115 +1,115 @@
-/* Reset and base setup */
+
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body, html {
+    height: 100%;
+    font-family: 'Segoe UI', sans-serif;
+    overflow: hidden;
+    color: white;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background: #000; 
+  }
+  
+  
+  .background {
+    background: url('assets/background.gif') no-repeat center center fixed;
+    background-size: cover;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    filter: brightness(0.4); 
+  }
+  
 
-body, html {
-  height: 100%;
-  font-family: 'Segoe UI', sans-serif;
-  overflow: hidden;
-  color: white;
-}
-
-body {
-  font-family: Arial, sans-serif;
-  text-align: center;
-  background: #000; /* Fallback for older browsers */
-}
-
-/* Background GIF */
-.background {
-  background: url('https://i.imgur.com/BaE1Jq3.gif') no-repeat center center fixed;
-  background-size: cover;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-  filter: brightness(0.4); /* dark overlay for contrast */
-}
-
-/* Main content */
-.content {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 0 20px;
-}
-
-h1 {
-  font-size: 3.5rem;
-  margin-bottom: 0.5rem;
-}
-
-p {
-  font-size: 1.25rem;
-  margin-bottom: 2rem;
-  color: #ccc;
-}
-
-/* Animated buttons */
-.buttons {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-}
-
-.buttons a {
-  position: relative;
-  display: inline-block;
-  padding: 12px 24px;
-  margin: 8px;
-  color: #fff;
-  background: transparent;
-  border: 2px solid #58a6ff;
-  border-radius: 30px;
-  text-decoration: none;
-  font-weight: 500;
-  overflow: hidden;
-  z-index: 0;
-  transition: all 0.4s ease;
-}
-
-.buttons a::before {
-  content: "";
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  width: 0;
-  height: 0;
-  background: #58a6ff;
-  border-radius: 100%;
-  z-index: -1;
-  transform: translate(-50%, -50%);
-  transition: width 0.4s ease, height 0.4s ease;
-}
-
-.buttons a:hover {
-  color: #0d1117;
-}
-
-.buttons a:hover::before {
-  width: 300%;
-  height: 300%;
-}
-
-/* Responsive for smaller screens */
-@media (max-width: 600px) {
+  .content {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+  }
+  
   h1 {
-    font-size: 2.2rem;
+    font-size: 3.5rem;
+    margin-bottom: 0.5rem;
   }
-
+  
   p {
-    font-size: 1rem;
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+    color: #ccc;
   }
-
+  
+ 
+  .buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+  }
+  
   .buttons a {
-    padding: 10px 18px;
-    font-size: 0.9rem;
+    position: relative;
+    display: inline-block;
+    padding: 12px 24px;
+    margin: 8px;
+    color: #fff;
+    background: transparent;
+    border: 2px solid #15ff00;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 500;
+    overflow: hidden;
+    z-index: 0;
+    transition: all 0.4s ease;
   }
-}
+  
+  .buttons a::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 0;
+    height: 0;
+    background: #58a6ff;
+    border-radius: 100%;
+    z-index: -1;
+    transform: translate(-50%, -50%);
+    transition: width 0.4s ease, height 0.4s ease;
+  }
+  
+  .buttons a:hover {
+    color: #0d1117;
+  }
+  
+  .buttons a:hover::before {
+    width: 300%;
+    height: 300%;
+  }
+  
+ 
+  @media (max-width: 600px) {
+    h1 {
+      font-size: 2.2rem;
+    }
+  
+    p {
+      font-size: 1rem;
+    }
+  
+    .buttons a {
+      padding: 10px 18px;
+      font-size: 0.9rem;
+    }
+  }
