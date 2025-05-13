@@ -11,7 +11,7 @@ async function fetchLatestVideo() {
   const videoContainer = document.getElementById('latest-video');
   videoContainer.innerHTML = `
     <iframe 
-      width="4060" 
+      width="460" 
       height="215" 
       src="https://www.youtube.com/embed/${videoId}" 
       title="YouTube video player" 
