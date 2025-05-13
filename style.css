@@ -115,9 +115,10 @@
     }
 
 .circle-photo {
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
+  width: 80px; 
+  height: 80px; 
+  border-radius: 50%; 
+  object-fit: cover; 
   display: block;
   margin: 0 auto 20px;
 }
