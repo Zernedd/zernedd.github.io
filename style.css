@@ -281,6 +281,8 @@ body, h1, h2, h3, h4, h5, h6, p, a, span, button {
 .friends-section {
   margin-top: 40px; /* Add spacing above the Friends section */
   text-align: center;
+  z-index: 1; /* Ensure it appears above other elements */
+  position: relative; /* Ensure proper stacking context */
 }
 
 .friends-section h2 {
