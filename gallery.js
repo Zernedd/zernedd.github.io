@@ -10,8 +10,7 @@ const images = [
   'Photo_25_05-05_19_22_13_74.png',
   'Photo_25_05-06_21_16_20_83.png',
   'Photo_25_05-07_16_21_53_58.png',
-  'image4.png'
-  
+  'Photo_25_05-07_17_03_45_34.png'
 ];
 let currentIndex = 0;
 
@@ -27,7 +26,7 @@ function loadGallery() {
 
 function openModal(index) {
   currentIndex = index;
-  modalImage.src = `${imageFolderPath}${images[currentIndex]}`;
+  updateModalImage();
   modal.style.display = 'block';
 }
 
@@ -37,18 +36,23 @@ function closeModalHandler() {
 
 function showNextImage() {
   currentIndex = (currentIndex + 1) % images.length;
-  modalImage.src = `${imageFolderPath}${images[currentIndex]}`;
+  updateModalImage();
 }
 
 function showPreviousImage() {
   currentIndex = (currentIndex - 1 + images.length) % images.length;
-  modalImage.src = `${imageFolderPath}${images[currentIndex]}`;
+  updateModalImage();
 }
 
+function updateModalImage() {
+  modalImage.src = `${imageFolderPath}${images[currentIndex]}`;
+  modalImage.alt = `Gallery Image ${currentIndex + 1}`;
+}
 
+// Event listeners
 closeModal?.addEventListener('click', closeModalHandler);
 nextButton?.addEventListener('click', showNextImage);
 prevButton?.addEventListener('click', showPreviousImage);
 
-
+// Load the gallery on page load
 loadGallery();

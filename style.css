@@ -185,6 +185,7 @@
   margin: auto;
   max-width: 80%;
   max-height: 80%;
+  border: 2px solid white; /* Add a border for better contrast */
 }
 
 .close {
@@ -203,21 +204,31 @@
 }
 
 .modal-controls button {
-  background-color: #fff;
+  background-color: #007bff;
+  color: white;
   border: none;
   padding: 10px 20px;
   margin: 0 10px;
   cursor: pointer;
   font-size: 16px;
   border-radius: 5px;
+  transition: background-color 0.3s ease;
 }
 
 .modal-controls button:hover {
-  background-color: #ddd;
+  background-color: #0056b3;
 }
 
 h1 {
   text-align: center;
   margin-bottom: 20px;
   color: #333;
+}
+
+h1, p, .gallery h2 {
+  color: white; /* Ensure text is white for better visibility */
+}
+
+body, h1, h2, h3, h4, h5, h6, p, a, span, button {
+  color: white !important; /* Ensure all text is white */
 }
