@@ -1,3 +1,4 @@
+//this is written by chatgpt bc i couldnt get it to work myself
 const galleryContainer = document.getElementById('gallery-container');
 const modal = document.getElementById('gallery-modal');
 const modalImage = document.getElementById('modal-image');
@@ -14,7 +15,9 @@ const images = [
     'Photo_25_05-07_18_19_49_60.png',
     'Photo_25_05-07_19_39_38_02.png',
     'Photo_25_05-12_21_30_44_30.png',
-    'Photo_25_05-13_09_42_27_26.png'
+    'Photo_25_05-13_09_42_27_26.png',
+    'Screenshot 2025-05-06 114208.png',
+    'Screenshot 2025-03-07 190434.png',
 ];
 let currentIndex = 0;
 
