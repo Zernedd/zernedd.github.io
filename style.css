@@ -74,16 +74,16 @@
         overflow: hidden;
         z-index: 0;
         transition: all 0.4s ease;
-        flex: 0 1 auto; /* Allow buttons to size based on their content */
-        padding: 10px 15px; /* Adjust padding for better fit */
-        font-size: 1rem; /* Ensure text fits properly */
+        flex: 0 1 auto; 
+        padding: 10px 15px; 
+        font-size: 1rem; 
         text-align: center;
         text-decoration: none;
         color: white;
         background-color: #007bff;
         border-radius: 5px;
         transition: background-color 0.3s, transform 0.2s;
-        max-width: none; /* Remove width restrictions */
+        max-width: none; 
     }
     
     .buttons a::before {
@@ -253,10 +253,10 @@ body, h1, h2, h3, h4, h5, h6, p, a, span, button {
 }
 
 .additional-buttons {
-  margin-top: 20px; /* Add spacing above the new buttons */
+  margin-top: 20px; 
   display: flex;
   justify-content: center;
-  gap: 1rem; /* Space between buttons */
+  gap: 1rem; 
 }
 
 .additional-buttons button {
@@ -275,17 +275,10 @@ body, h1, h2, h3, h4, h5, h6, p, a, span, button {
   transform: scale(1.05);
 }
 
-.friends-section {
-  margin-top: 40px; /* Add spacing above the Friends section */
-  text-align: center;
-  z-index: 1; /* Ensure it appears above other elements */
-  position: relative; /* Ensure proper stacking context */
-}
-
 .friends-section h2 {
   font-size: 1.8rem;
   margin-bottom: 15px;
-  color: white; /* Ensure the text is white */
+  color: white; 
 }
 
 .friends-section .buttons {
@@ -295,16 +288,16 @@ body, h1, h2, h3, h4, h5, h6, p, a, span, button {
 }
 
 .buttons h2 {
-  flex: 1 1 100%; /* Make the heading take the full width */
+  flex: 1 1 100%; 
   text-align: center;
   margin-top: 20px;
   margin-bottom: 10px;
-  color: white; /* Ensure the text is white */
+  color: white; 
 }
 
 .buttons a, .additional-buttons button {
-  padding: 10px 20px; /* Increase padding for better text fit */
-  font-size: 1rem; /* Ensure text is readable */
-  white-space: nowrap; /* Prevent text from wrapping */
+  padding: 10px 20px; 
+  font-size: 1rem; 
+  white-space: nowrap; 
   text-align: center;
 }
