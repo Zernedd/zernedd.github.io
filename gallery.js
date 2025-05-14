@@ -6,39 +6,28 @@ const prevButton = document.getElementById('prev-button');
 const nextButton = document.getElementById('next-button');
 
 const imageFolderPath = 'gallery/';
-let images = [];
+const images = [
+  'Photo_25_05-05_19_22_13_74.png',
+  'Photo_25_05-06_21_16_20_83.png',
+  'Photo_25_05-07_16_21_53_58.png',
+  'image4.png'
+  
+];
 let currentIndex = 0;
 
-async function loadGallery() {
-  try {
-    const response = await fetch(imageFolderPath);
-    if (!response.ok) {
-      throw new Error('Failed to fetch gallery folder');
-    }
-
-    const parser = new DOMParser();
-    const html = parser.parseFromString(await response.text(), 'text/html');
-    const links = Array.from(html.querySelectorAll('a'));
-
-    links.forEach(link => {
-      const href = link.getAttribute('href');
-      if (/\.(jpg|jpeg|png|gif)$/i.test(href)) {
-        const img = document.createElement('img');
-        img.src = `${imageFolderPath}${href}`;
-        img.alt = 'Gallery Image';
-        img.addEventListener('click', () => openModal(href));
-        galleryContainer.appendChild(img);
-        images.push(href);
-      }
-    });
-  } catch (error) {
-    console.error('Error loading gallery:', error);
-  }
+function loadGallery() {
+  images.forEach((image, index) => {
+    const img = document.createElement('img');
+    img.src = `${imageFolderPath}${image}`;
+    img.alt = `Gallery Image ${index + 1}`;
+    img.addEventListener('click', () => openModal(index));
+    galleryContainer.appendChild(img);
+  });
 }
 
-function openModal(imagePath) {
-  currentIndex = images.indexOf(imagePath);
-  modalImage.src = `${imageFolderPath}${imagePath}`;
+function openModal(index) {
+  currentIndex = index;
+  modalImage.src = `${imageFolderPath}${images[currentIndex]}`;
   modal.style.display = 'block';
 }
 
@@ -56,10 +45,10 @@ function showPreviousImage() {
   modalImage.src = `${imageFolderPath}${images[currentIndex]}`;
 }
 
-// Event listeners
-closeModal.addEventListener('click', closeModalHandler);
-nextButton.addEventListener('click', showNextImage);
-prevButton.addEventListener('click', showPreviousImage);
 
-// Load the gallery on page load
+closeModal?.addEventListener('click', closeModalHandler);
+nextButton?.addEventListener('click', showNextImage);
+prevButton?.addEventListener('click', showPreviousImage);
+
+
 loadGallery();
