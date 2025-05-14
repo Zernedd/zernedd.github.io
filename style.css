@@ -279,7 +279,7 @@ body, h1, h2, h3, h4, h5, h6, p, a, span, button {
 }
 
 .friends-section {
-  margin-top: 30px; /* Add spacing above the Friends section */
+  margin-top: 40px; /* Add spacing above the Friends section */
   text-align: center;
 }
 
@@ -287,4 +287,10 @@ body, h1, h2, h3, h4, h5, h6, p, a, span, button {
   font-size: 1.8rem;
   margin-bottom: 15px;
   color: white; /* Ensure the text is white */
+}
+
+.friends-section .buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem; /* Space between buttons */
 }
