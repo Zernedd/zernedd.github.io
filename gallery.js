@@ -10,7 +10,11 @@ const images = [
   'Photo_25_05-05_19_22_13_74.png',
   'Photo_25_05-06_21_16_20_83.png',
   'Photo_25_05-07_16_21_53_58.png',
-  'Photo_25_05-07_17_03_45_34.png'
+  'Photo_25_05-07_17_03_45_34.png',
+    'Photo_25_05-07_18_19_49_60.png',
+    'Photo_25_05-07_19_39_38_02.png',
+    'Photo_25_05-12_21_30_44_30.png',
+    'Photo_25_05-13_09_42_27_26.png'
 ];
 let currentIndex = 0;
 
@@ -19,7 +23,7 @@ function loadGallery() {
     const img = document.createElement('img');
     img.src = `${imageFolderPath}${image}`;
     img.alt = `Gallery Image ${index + 1}`;
-    img.addEventListener('click', () => openModal(index)); // Attach click event to open modal
+    img.addEventListener('click', () => openModal(index)); 
     galleryContainer.appendChild(img);
   });
 }
@@ -27,11 +31,11 @@ function loadGallery() {
 function openModal(index) {
   currentIndex = index;
   updateModalImage();
-  modal.style.display = 'block'; // Show modal
+  modal.style.display = 'block'; 
 }
 
 function closeModalHandler() {
-  modal.style.display = 'none'; // Hide modal
+  modal.style.display = 'none'; 
 }
 
 function showNextImage() {
