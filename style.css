@@ -162,6 +162,8 @@
   gap: 15px; 
   padding: 20px;
   justify-items: center;
+  max-height: 80vh; 
+  overflow-y: auto; 
 }
 
 #gallery-container img {
