@@ -300,3 +300,11 @@ body, h1, h2, h3, h4, h5, h6, p, a, span, button {
   justify-content: center;
   gap: 1rem; /* Space between buttons */
 }
+
+.buttons h2 {
+  flex: 1 1 100%; /* Make the heading take the full width */
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  color: white; /* Ensure the text is white */
+}
