@@ -50,9 +50,16 @@ function updateModalImage() {
 }
 
 // Event listeners
-closeModal?.addEventListener('click', closeModalHandler);
-nextButton?.addEventListener('click', showNextImage);
-prevButton?.addEventListener('click', showPreviousImage);
+closeModal.addEventListener('click', closeModalHandler);
+nextButton.addEventListener('click', showNextImage);
+prevButton.addEventListener('click', showPreviousImage);
+
+// Close modal when clicking outside the image
+modal.addEventListener('click', (event) => {
+  if (event.target === modal) {
+    closeModalHandler();
+  }
+});
 
 // Load the gallery on page load
 loadGallery();
