@@ -284,7 +284,7 @@ body, h1, h2, h3, h4, h5, h6, p, a, span, button {
 .friends-section .buttons {
   display: flex;
   justify-content: center;
-  gap: 1rem; /* Space between buttons */
+  gap: 1rem; 
 }
 
 .buttons h2 {
