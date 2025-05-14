@@ -1,4 +1,4 @@
-const API_KEY = 'AIzaSyBxHmrfHkP61yPp9ZhNTgwS0aBMcI5mQrs'; // dont worry this is an alt key and isnt connected to anything i use so have at it script kid :3
+const API_KEY = 'AIzaSyAPP5lMdLRuA3GDx4qpLNHHCZM5Z8Pi0bI'; // dont worry this is an alt key and isnt connected to anything i use so have at it script kid :3
 const CHANNEL_ID = 'UC9nw8aKnMsplhps5xEe3BZA'; 
 
 async function fetchLatestVideo() {
