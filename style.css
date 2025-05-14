@@ -123,3 +123,33 @@
   display: block;
   margin: 0 auto 20px;
 }
+
+.gallery {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 300px;
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.gallery h2 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+#gallery-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+#gallery-container img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 4px;
+}
