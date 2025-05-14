@@ -48,4 +48,18 @@ function closeModalHandler() {
 
 function showNextImage() {
   currentIndex = (currentIndex + 1) % images.length;
+  modalImage.src = `${imageFolderPath}${images[currentIndex]}`;
 }
+
+function showPreviousImage() {
+  currentIndex = (currentIndex - 1 + images.length) % images.length;
+  modalImage.src = `${imageFolderPath}${images[currentIndex]}`;
+}
+
+// Event listeners
+closeModal.addEventListener('click', closeModalHandler);
+nextButton.addEventListener('click', showNextImage);
+prevButton.addEventListener('click', showPreviousImage);
+
+// Load the gallery on page load
+loadGallery();
