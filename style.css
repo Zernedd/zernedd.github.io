@@ -39,6 +39,7 @@
         justify-content: center;
         align-items: center;
         padding: 0 20px;
+        animation: bounceIn 1s ease-out; 
     }
     
     h1 {
@@ -300,4 +301,20 @@ body, h1, h2, h3, h4, h5, h6, p, a, span, button {
   font-size: 1rem; 
   white-space: nowrap; 
   text-align: center;
+}
+
+
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  50% {
+    opacity: 0.7;
+    transform: scale(1.1);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
