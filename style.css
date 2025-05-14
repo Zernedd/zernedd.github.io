@@ -157,17 +157,26 @@
 }
 
 #gallery-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); 
+  gap: 15px; 
+  padding: 20px;
+  justify-items: center;
 }
 
 #gallery-container img {
-  width: 100px;
-  height: 100px;
-  object-fit: cover;
-  border-radius: 4px;
+  width: 100%;
+  height: auto;
+  border-radius: 8px; 
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+  transition: transform 0.3s ease, box-shadow 0.3s ease; 
 }
+
+#gallery-container img:hover {
+  transform: scale(1.05); 
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); 
+}
+
 .modal {
   display: none;
   position: fixed;
@@ -177,7 +186,7 @@
   width: 100%;
   height: 100%;
   overflow: auto;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.8); 
 }
 
 .modal-content {
@@ -185,17 +194,8 @@
   margin: auto;
   max-width: 80%;
   max-height: 80%;
-  border: 2px solid white; /* Add a border for better contrast */
-}
-
-.close {
-  position: absolute;
-  top: 20px;
-  right: 35px;
-  color: white;
-  font-size: 40px;
-  font-weight: bold;
-  cursor: pointer;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
 }
 
 .modal-controls {
@@ -226,9 +226,9 @@ h1 {
 }
 
 h1, p, .gallery h2 {
-  color: white; /* Ensure text is white for better visibility */
+  color: white; 
 }
 
 body, h1, h2, h3, h4, h5, h6, p, a, span, button {
-  color: white !important; /* Ensure all text is white */
+  color: white !important; 
 }
