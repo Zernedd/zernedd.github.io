@@ -1,7 +1,13 @@
 const galleryContainer = document.getElementById('gallery-container');
-
+const modal = document.getElementById('gallery-modal');
+const modalImage = document.getElementById('modal-image');
+const closeModal = document.querySelector('.close');
+const prevButton = document.getElementById('prev-button');
+const nextButton = document.getElementById('next-button');
 
 const imageFolderPath = 'gallery/';
+let images = [];
+let currentIndex = 0;
 
 async function loadGallery() {
   try {
@@ -20,7 +26,9 @@ async function loadGallery() {
         const img = document.createElement('img');
         img.src = `${imageFolderPath}${href}`;
         img.alt = 'Gallery Image';
+        img.addEventListener('click', () => openModal(href));
         galleryContainer.appendChild(img);
+        images.push(href);
       }
     });
   } catch (error) {
@@ -28,4 +36,16 @@ async function loadGallery() {
   }
 }
 
-loadGallery();
+function openModal(imagePath) {
+  currentIndex = images.indexOf(imagePath);
+  modalImage.src = `${imageFolderPath}${imagePath}`;
+  modal.style.display = 'block';
+}
+
+function closeModalHandler() {
+  modal.style.display = 'none';
+}
+
+function showNextImage() {
+  currentIndex = (currentIndex + 1) % images.length;
+}
