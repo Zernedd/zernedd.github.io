@@ -55,8 +55,9 @@
  
     .buttons {
         display: flex;
-        justify-content: center;
-        gap: 1rem;
+        flex-wrap: wrap; /* Allow buttons to wrap to the next line */
+        justify-content: center; /* Center-align buttons */
+        gap: 1rem; /* Space between buttons */
     }
     
     .buttons a {
@@ -73,6 +74,9 @@
         overflow: hidden;
         z-index: 0;
         transition: all 0.4s ease;
+        flex: 1 1 calc(33.33% - 1rem); /* Ensure up to 3 buttons per row */
+        max-width: calc(33.33% - 1rem); /* Limit button width */
+        text-align: center;
     }
     
     .buttons a::before {
