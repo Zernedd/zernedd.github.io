@@ -19,7 +19,7 @@ function loadGallery() {
     const img = document.createElement('img');
     img.src = `${imageFolderPath}${image}`;
     img.alt = `Gallery Image ${index + 1}`;
-    img.addEventListener('click', () => openModal(index));
+    img.addEventListener('click', () => openModal(index)); // Attach click event to open modal
     galleryContainer.appendChild(img);
   });
 }
@@ -27,11 +27,11 @@ function loadGallery() {
 function openModal(index) {
   currentIndex = index;
   updateModalImage();
-  modal.style.display = 'block';
+  modal.style.display = 'block'; // Show modal
 }
 
 function closeModalHandler() {
-  modal.style.display = 'none';
+  modal.style.display = 'none'; // Hide modal
 }
 
 function showNextImage() {
