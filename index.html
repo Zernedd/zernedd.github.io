@@ -58,10 +58,12 @@
   
 ];
 
-const p = document.createElement("p");
-p.textContent = "Fact About Me: " + facts[Math.floor(Math.random() * factthing.length)];
-  
-     document.querySelector(".content").appendChild(p);
+setTimeout(() => {
+  //this code is very bad
+  const p = document.createElement("p");
+  p.textContent = "Fact About Me: " + factthing[Math.floor(Math.random() * factthing.length)];
+  document.querySelector(".content").appendChild(p);
+}, text.length * 100 + 500);
 
    const photo = document.querySelector(".circle-photo");
    // found this on a reddit post and thought it was cool
