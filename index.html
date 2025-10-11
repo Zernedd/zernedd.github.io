@@ -37,7 +37,7 @@
 <!-- embedded js my goat -->
   <script>
    
-    const text = "Hiiii! I'm Zern";
+    const text = "Hiiii! I'm Zern :3";
     const intro = document.getElementById("intro");
     let i = 0;
     intro.textContent = "";
@@ -49,6 +49,14 @@
       }
     }
     type();
+
+   const photo = document.querySelector(".circle-photo");
+   // found this on a reddit post and thought it was cool
+document.addEventListener("mousemove", e => {
+  const x = (e.clientX / window.innerWidth - 0.5) * 20;
+  const y = (e.clientY / window.innerHeight - 0.5) * 20;
+  photo.style.transform = `rotateY(${x}deg) rotateX(${y}deg)`;
+});
       </script>
 </body>
   <!--yea this is written by chatgpt bc i couldnt get it to work myself d:-->
