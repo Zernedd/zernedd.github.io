@@ -59,10 +59,10 @@
 ];
 
 setTimeout(() => {
-  //this code is very bad
+  //maybe thats how i put it under my name idk
   const p = document.createElement("p");
   p.textContent = "Fact About Me: " + factthing[Math.floor(Math.random() * factthing.length)];
-  document.querySelector(".content").appendChild(p);
+  document.getElementById("intro").insertAdjacentElement("afterend", p);
 }, text.length * 100 + 500);
 
    const photo = document.querySelector(".circle-photo");
