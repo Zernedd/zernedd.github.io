@@ -50,6 +50,19 @@
     }
     type();
 
+    const factthing = [
+  "I somehow break things when trying to fix them.",
+  "I love trying to break code more than writing it.",
+  "I got into computers because my dad blocked youtube on an old school laptop.",
+  "I can never leave something alone even when I know I shouldnt touch it."
+  
+];
+
+const p = document.createElement("p");
+p.textContent = "Fact About Me: " + facts[Math.floor(Math.random() * factthing.length)];
+  
+     document.querySelector(".content").appendChild(p);
+
    const photo = document.querySelector(".circle-photo");
    // found this on a reddit post and thought it was cool
 document.addEventListener("mousemove", e => {
