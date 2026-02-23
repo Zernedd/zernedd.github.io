@@ -1,14 +1,12 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Zern</title>
   <link rel="stylesheet" href="style.css"/>
-  
-  
-    
-  </script>
 </head>
+
 <body>
   <div class="background"></div>
 
@@ -16,14 +14,15 @@
     <img src="assets/profile.png" class="circle-photo" />
     <h1 id="intro">Hiiii! I'm Zern</h1>
     <p>Idiot • Hobbyist programmer • Self Taught Beginner Security Engineer • Community Security @ Another Axiom</p>
+
     <div id="latest-video"></div>
     <script src="latestVideo.js"></script>
 
     <div class="buttons">
       <a href="https://www.youtube.com/@ZrDwastaken/videos" target="_blank">YouTube</a>
       <a href="https://github.com/Zernedd" target="_blank">GitHub</a>
-       <a href="https://tlk.io/zern" target="_blank">Wanna Chat? Join My TLK!</a>
       <a href="gallery.html" target="_self">Gallery</a>
+
       <h2>Friends!</h2>
       <a href="https://lapis.64will64.com/" target="_blank">Lapis</a>
       <a href="https://64will64.com/" target="_blank">64Will64</a>
@@ -31,17 +30,13 @@
     </div>
   </div>
 
-    
-    
-
-    
-<!-- embedded js my goat -->
+  <!-- embedded js my goat -->
   <script>
-   
     const text = "Hiiii! I'm Zern (:";
     const intro = document.getElementById("intro");
     let i = 0;
     intro.textContent = "";
+
     function type() {
       if (i < text.length) {
         intro.textContent += text.charAt(i);
@@ -52,33 +47,27 @@
     type();
 
     const factthing = [
-  "I somehow break things when trying to fix them.",
-  "I love trying to break code more than writing it.",
-  "I got into computers because my dad blocked youtube on an old school laptop.",
-  "I can never leave something alone even when I know I shouldnt touch it."
-  
-];
+      "I somehow break things when trying to fix them.",
+      "I love trying to break code more than writing it.",
+      "I got into computers because my dad blocked youtube on an old school laptop.",
+      "I can never leave something alone even when I know I shouldnt touch it."
+    ];
 
-setTimeout(() => {
-  //maybe thats how i put it under my name idk
-  const p = document.createElement("p");
-  p.textContent = "Fact About Me: " + factthing[Math.floor(Math.random() * factthing.length)];
-  document.getElementById("intro").insertAdjacentElement("afterend", p);
-}, text.length * 100 + 500);
+    setTimeout(() => {
+      const p = document.createElement("p");
+      p.textContent = "Fact About Me: " + factthing[Math.floor(Math.random() * factthing.length)];
+      document.getElementById("intro").insertAdjacentElement("afterend", p);
+    }, text.length * 100 + 500);
 
-   const photo = document.querySelector(".circle-photo");
-   // found this on a reddit post and thought it was cool
-document.addEventListener("mousemove", e => {
-  const x = (e.clientX / window.innerWidth - 0.5) * 20;
-  const y = (e.clientY / window.innerHeight - 0.5) * 20;
-  photo.style.transform = `rotateY(${x}deg) rotateX(${y}deg)`;
-});
-      </script>
-</body>
-  <!--yea this is written by chatgpt bc i couldnt get it to work myself d:-->
-  
+    const photo = document.querySelector(".circle-photo");
 
- 
+    document.addEventListener("mousemove", e => {
+      const x = (e.clientX / window.innerWidth - 0.5) * 20;
+      const y = (e.clientY / window.innerHeight - 0.5) * 20;
+      photo.style.transform = `rotateY(${x}deg) rotateX(${y}deg)`;
+    });
+  </script>
+
   <div id="gallery-modal" class="modal">
     <span class="close">&times;</span>
     <img class="modal-content" id="modal-image" />
@@ -88,7 +77,6 @@ document.addEventListener("mousemove", e => {
     </div>
   </div>
 
-  <script src="latestVideo.js"></script>
   <script src="gallery.js"></script>
 </body>
 </html>
