@@ -11,7 +11,11 @@
   <div class="background"></div>
 
   <div class="content">
-    <img src="assets/profile.png" class="circle-photo" />
+    <div class="avatar-wrap">
+      <img src="assets/profile.png" class="circle-photo" id="discord-avatar" />
+      <span id="discord-status" class="status-dot" title="offline"></span>
+    </div>
+    <div id="custom-status" class="custom-status"></div>
     <h1 id="intro">Hiiii! I'm Zern</h1>
     <p>Idiot • Hobbyist programmer • Self Taught Beginner Security Engineer • Community Security @ Another Axiom</p>
 
@@ -19,7 +23,6 @@
     <script src="latestVideo.js"></script>
 
     <div class="buttons">
-      <a href="https://www.youtube.com/@ZrDwastaken/videos" target="_blank">YouTube</a>
       <a href="https://github.com/Zernedd" target="_blank">GitHub</a>
       <a href="https://tlk.io/zernedd" target="_blank">Wanna Chat? Click here!</a>
      
@@ -62,6 +65,54 @@
     }, text.length * 100 + 500);
 
     const photo = document.querySelector(".circle-photo");
+//discord stuff done with ai because im a lazy bum
+    const DISCORD_ID = "1298056496298328094";
+    const statusDot = document.getElementById("discord-status");
+    const customStatusEl = document.getElementById("custom-status");
+
+    function renderCustomStatus(activities) {
+      const custom = activities?.find(a => a.type === 4);
+      if (!custom) {
+        customStatusEl.innerHTML = "";
+        return;
+      }
+      let emojiHtml = "";
+      if (custom.emoji) {
+        if (custom.emoji.id) {
+          const ext = custom.emoji.animated ? "gif" : "png";
+          emojiHtml = `<img class="status-emoji" src="https://cdn.discordapp.com/emojis/${custom.emoji.id}.${ext}" alt="${custom.emoji.name}" />`;
+        } else if (custom.emoji.name) {
+          emojiHtml = `<span class="status-emoji">${custom.emoji.name}</span>`;
+        }
+      }
+      const text = custom.state ? `<span>${custom.state.replace(/[<>]/g, "")}</span>` : "";
+      customStatusEl.innerHTML = emojiHtml + text;
+    }
+
+    async function updateDiscordPresence() {
+      try {
+        const res = await fetch(`https://api.lanyard.rest/v1/users/${DISCORD_ID}`);
+        const { data, success } = await res.json();
+        if (!success) return;
+
+        if (data.discord_user?.avatar) {
+          const hash = data.discord_user.avatar;
+          const ext = hash.startsWith("a_") ? "gif" : "png";
+          photo.src = `https://cdn.discordapp.com/avatars/${DISCORD_ID}/${hash}.${ext}?size=512`;
+        }
+
+        const status = data.discord_status || "offline";
+        statusDot.dataset.status = status;
+        statusDot.title = status;
+
+        renderCustomStatus(data.activities);
+      } catch (e) {
+        console.warn("Lanyard fetch failed:", e);
+      }
+    }
+
+    updateDiscordPresence();
+    setInterval(updateDiscordPresence, 30000);
 
     document.addEventListener("mousemove", e => {
       const x = (e.clientX / window.innerWidth - 0.5) * 20;
@@ -70,15 +121,5 @@
     });
   </script>
 
-  <div id="gallery-modal" class="modal">
-    <span class="close">&times;</span>
-    <img class="modal-content" id="modal-image" />
-    <div class="modal-controls">
-      <button id="prev-button">Previous</button>
-      <button id="next-button">Next</button>
-    </div>
-  </div>
-
-  <script src="gallery.js"></script>
 </body>
 </html>
